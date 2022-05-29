@@ -1,5 +1,6 @@
 package com.example.employee.service.impl;
 
+import com.example.employee.dto.EmployeeCreateDto;
 import com.example.employee.dto.EmployeeDto;
 import com.example.employee.exception.ResourceNotFoundException;
 import com.example.employee.mapper.EmployeeMapper;
@@ -22,7 +23,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     EmployeeMapper employeeMapper;
 
     @Override
-    public EmployeeDto saveEmployee(EmployeeDto employeeDto) {
+    public EmployeeDto saveEmployee(EmployeeCreateDto employeeDto) {
         Employee employee = employeeMapper.toEmployee(employeeDto);
         return saveAndReturnDTO(employee);
     }
